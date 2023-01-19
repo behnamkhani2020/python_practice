@@ -22,6 +22,8 @@ class Welcome:
                 self.refresh_game()
                 return
             else :
+                self.run = False
+                self.username = ''
                 return
     
     def refresh_game(self):

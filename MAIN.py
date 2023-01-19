@@ -11,6 +11,9 @@ while True:
     myWelcome.welcome_message()
     myWelcome.game_interance_message()
     if myWelcome.refresh :
+        myWelcome.refresh = False
+        myWelcome.run = False
+        myWelcome.username = ''
         continue
     elif myWelcome.run :
         myGame.load_first_game(myWelcome.username)
