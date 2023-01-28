@@ -1,9 +1,8 @@
-
-
+from User import User
 class Welcome:
     refresh = False
     run = False
-    username= ''
+    user = User("NEW")
     def welcome_message(self):
         print('\nHello there young adventurer . welcome to timewaste game by behnam khanyaghma :>')
         print('Warning !! if you are not a fresh young programmer just examining python LEAVE IMMIADIATELY :>\n')
@@ -17,13 +16,13 @@ class Welcome:
             self.run_game()
             return
         else :
-            refresh_game_message = input('wrong answer, YOU WILL BE ADDED TO LOSER LIST FOREVER, unless you play again and win :>, Would YOU ? (Y)er (N)o :  ')
-            if refresh_game_message == 'Y' or enter_game_answer == 'y' :
+            refresh_game_message = input('wrong answer, YOU WILL BE ADDED TO LOSER LIST FOREVER, unless you play again and win :>, Would YOU ? (Y)es (N)o :  ')
+            if refresh_game_message == 'Y' or refresh_game_message == 'y' :
                 self.refresh_game()
                 return
             else :
                 self.run = False
-                self.username = ''
+                self.user.name = 'NEW'
                 return
     
     def refresh_game(self):
@@ -32,5 +31,5 @@ class Welcome:
 
     def run_game(self):
         self.run = True
-        self.username = input('please submit a USERNAME : ')
+        self.user.name =  input('please submit a USER NAME : ')
         return
