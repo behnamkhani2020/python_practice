@@ -13,8 +13,11 @@ def chk_msg(msg):
 while True:
     os.system('clear')
     print(time.ctime())
+    time.sleep(1)
     myWelcome.welcome_message()
+    time.sleep(1)
     myWelcome.game_interance_message()
+    time.sleep(1)
     if myWelcome.refresh :
         myWelcome.refresh = False
         myWelcome.run = False
