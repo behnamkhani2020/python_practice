@@ -1,5 +1,15 @@
 from User import User
 import time,threading
+from pynput import keyboard
+
+def on_press(key):
+    try:
+        print('alphanumeric key {0} pressed'.format(
+            key.char))
+    except AttributeError:
+        print('special key {0} pressed'.format(
+            key))
+listener = keyboard.Listener(on_press=on_press)
 
 def load_RPS():
     c = ''
@@ -27,6 +37,7 @@ class Games:
         print('\n\t Welcome %s' % user.name)
         print("your honor : %d" % user.honor)
         print("Loading your first game of RPS , be patient. ")
+        
         try :
             for i in range(0,2):
                 print('be patient ... don\'t press ctrl+c ')
@@ -50,6 +61,7 @@ class Games:
                     return False
 
     def load_second_game(self,user):
+        listener.start()
         while(True):
             print("hurray for %s" % user.name)
             time.sleep(2)
